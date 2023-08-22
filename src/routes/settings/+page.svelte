@@ -15,8 +15,9 @@
 	import { fade } from 'svelte/transition';
 	import { _ } from 'svelte-i18n';
 	import { createErrorNotification } from '$lib/stores/notification.store';
+	import LibrarySettingsPage from './LibrarySettingsPage.svelte';
 
-	type Section = 'general' | 'integrations';
+	type Section = 'general' | 'integrations' | 'library';
 
 	let openTab: Section = 'general';
 
@@ -212,6 +213,12 @@
 			>
 				{$_('settings.navbar.integrations')}
 			</button>
+			<button
+				on:click={() => (openTab = 'library')}
+				class={openTab && getNavButtonStyle('library')}
+			>
+				{$_('settings.navbar.library')}
+			</button>
 		</div>
 		<div class="flex flex-col gap-2">
 			<FormButton
@@ -247,6 +254,7 @@
 			<option value="integrations">
 				{$_('settings.navbar.integrations')}
 			</option>
+			<option value="library">{$_('settings.navbar.library')}</option>
 		</Select>
 	</div>
 
@@ -267,6 +275,10 @@
 						{updateRadarrHealth}
 						{updateJellyfinHealth}
 					/>
+				{/if}
+
+				{#if openTab === 'library'}
+					<LibrarySettingsPage bind:values />
 				{/if}
 			</div>
 		</div>

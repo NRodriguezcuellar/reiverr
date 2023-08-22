@@ -57,7 +57,8 @@
 		"navbar": {
 			"settings": "Configuration",
 			"general": "General",
-			"integrations": "Integrations"
+			"integrations": "Integrations",
+			"library": "Library"
 		},
 		"general": {
 			"userInterface": {
@@ -92,6 +93,10 @@
 				"languageProfile": "Language Profile",
 				"jellyfinUser": "Jellyfin User"
 			}
+		},
+		"library": {
+			"library": "Library",
+			"imageBackdropQuality": "Image backdrop quality"
 		},
 		"misc": {
 			"saveChanges": "Save Changes",

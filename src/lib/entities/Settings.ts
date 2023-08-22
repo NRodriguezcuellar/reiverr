@@ -20,6 +20,9 @@ export class Settings extends BaseEntity {
 	@Column('integer', { default: defaultSettings.animationDuration })
 	animationDuration: number;
 
+	@Column('integer', { default: defaultSettings.libraryImageBackdropQuality })
+	libraryImageBackdropQuality: number;
+
 	// Discover
 	@Column('text', { default: defaultSettings.discover.region })
 	discoverRegion: string;
@@ -91,6 +94,7 @@ export class Settings extends BaseEntity {
 			language: settings.language,
 			autoplayTrailers: settings.autoplayTrailers,
 			animationDuration: settings.animationDuration,
+			libraryImageBackdropQuality: settings.libraryImageBackdropQuality,
 
 			discover: {
 				...defaultSettings.discover,
@@ -132,6 +136,7 @@ export class Settings extends BaseEntity {
 		settings.language = values.language;
 		settings.autoplayTrailers = values.autoplayTrailers;
 		settings.animationDuration = values.animationDuration;
+		settings.libraryImageBackdropQuality = values.libraryImageBackdropQuality;
 
 		settings.discoverRegion = values.discover.region;
 		settings.discoverExcludeLibraryItems = values.discover.excludeLibraryItems;

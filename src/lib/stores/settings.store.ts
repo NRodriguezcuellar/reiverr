@@ -5,6 +5,7 @@ export interface SettingsValues {
 	autoplayTrailers: boolean;
 	language: string;
 	animationDuration: number;
+	libraryImageBackdropQuality: number;
 	discover: {
 		region: string;
 		excludeLibraryItems: boolean;
@@ -36,6 +37,7 @@ export const defaultSettings: SettingsValues = {
 	autoplayTrailers: true,
 	language: 'en',
 	animationDuration: 150,
+	libraryImageBackdropQuality: 20,
 	discover: {
 		region: '',
 		excludeLibraryItems: true,

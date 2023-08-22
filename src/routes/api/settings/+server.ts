@@ -7,5 +7,6 @@ export const GET: RequestHandler = async ({ url }) => {
 
 export const POST: RequestHandler = async ({ request }) => {
 	const values = await request.json();
+
 	return json(await Settings.set('default', values));
 };
